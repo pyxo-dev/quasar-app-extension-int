@@ -4,7 +4,7 @@ module.exports = function () {
       name: 'typescript',
       type: 'confirm',
       message: 'Does your app have typescript support?',
-      default: true,
+      default: false,
     },
   ]
 }

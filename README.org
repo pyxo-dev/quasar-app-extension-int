@@ -7,8 +7,9 @@ Quasar apps.
 quasar ext add @pyxo/int
 #+end_src
 
-The extension will add a directory =src/extensions/int/= that contains the
-configuration and the boot file.
+The extension will add a directory =src/int/= that contains the configuration.
+It adds also a boot file =src/boot/int.(ts|js)=, that needs to be registered
+manually in =quasar.conf.js > boot=.
 
 The extension will also scaffold an example implementation in =src-int/=.
 
@@ -21,8 +22,8 @@ files will be added instead of *.js.
 quasar ext remove @quasar/int
 #+end_src
 
-You might also wish to remove the added directories =src/extensions/int= and
-=src-int=.
+You might also wish to remove the added directories =src/int=, =src-int= and the
+boot file =src/boot/int.(ts|js)=.
 
 * Features
 - SSR support.
@@ -37,7 +38,7 @@ You might also wish to remove the added directories =src/extensions/int= and
   locale, and recommends the use of [[https://www.w3.org/International/articles/language-tags][BCP 47]] language tags.
 
 * Documentation
-API docs: [[https://qint.pyxo.net/api][qint.pyxo.net/api]]
+API docs: [[https://wint.pyxo.net/api][wint]] | [[https://vint.pyxo.net/api][vint]] | [[https://qint.pyxo.net/api][qint]]
 
 * Source code
 Repository: [[https://github.com/pyxo-dev/quasar-app-extension-int][github.com/pyxo-dev/quasar-app-extension-int]]
