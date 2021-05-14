@@ -1,6 +1,6 @@
 {
   "name": "@pyxo/quasar-app-extension-int",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Quasar app extension to add internationalization support.",
   "keywords": [
     "Quasar",
@@ -47,6 +47,6 @@
     "vue-i18n": "^9.0.0"
   },
   "dependencies": {
-    "@pyxo/qint": "^1.0.0-beta.3"
+    "@pyxo/qint": "^1.0.0-beta.5"
   }
 }
