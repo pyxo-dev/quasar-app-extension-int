@@ -1,6 +1,6 @@
 {
   "name": "@pyxo/quasar-app-extension-int",
-  "version": "0.0.3",
+  "version": "1.0.0-beta.1",
   "description": "A Quasar app extension to add internationalization support.",
   "keywords": [
     "Quasar",
@@ -22,7 +22,8 @@
   "homepage": "https://github.com/pyxo-dev/quasar-app-extension-int",
   "scripts": {
     "format": "prettier -w src",
-    "lint": "eslint --ext .js,.ts ./src/templates/"
+    "lint": "eslint --ext .js,.ts ./src/templates/",
+    "tsc": "rm -rf ./lib/ && tsc"
   },
   "files": [
     "/src",
