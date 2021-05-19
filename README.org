@@ -4,6 +4,7 @@ Quasar apps.
 
 * Installation
 #+begin_src sh
+yarn add vue-i18n@next # or: npm install vue-i18n@next
 quasar ext add @pyxo/int
 #+end_src
 
