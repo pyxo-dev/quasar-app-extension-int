@@ -22,44 +22,48 @@ files will be added instead of `*.js`.
 
 ## Setup
 
-To use the scaffolded example, register the boot file in `quasar.conf.js >
-boot` and make the following changes:
+To use the scaffolded example:
 
-`src/router/index.(ts|js)`
+-   Register the boot file in `quasar.conf.js > boot`.
 
-``` diff
-   const Router = createRouter({
-     scrollBehavior: () => ({ left: 0, top: 0 }),
--    routes,
-+    routes: [],
-     ...
-```
+-   Make the following changes in `src/router/index.(ts|js)`
 
-Change `vueRouterMode` in `quasar.conf.js > build` to `history` mode.
+    ``` diff
+       const Router = createRouter({
+         scrollBehavior: () => ({ left: 0, top: 0 }),
+    -    routes,
+    +    routes: [],
+         ...
+    ```
+
+-   Change `vueRouterMode` in `quasar.conf.js > build` to `history` mode.
+
+-   Enable `rtl` in `quasar.conf.js > build` (as the scaffold example uses "Arabic").
 
 ### Hreflang link tags
 
-To use the hreflang link tags, make the following changes:
+To use the hreflang link tags:
 
-`src/App.vue`
+-   Make the following changes in `src/App.vue`
 
-``` diff
- <script lang="ts">
-+import { useMeta } from 'quasar'
-+import { qint } from 'src/boot/int'
- import { defineComponent } from 'vue'
+    ``` diff
+     <script lang="ts">
+    +import { useMeta } from 'quasar'
+    +import { qint } from 'src/boot/int'
+     import { defineComponent } from 'vue'
 
- export default defineComponent({
-   name: 'App',
+     export default defineComponent({
+       name: 'App',
 
-+  setup() {
-+    useMeta(() => qint.meta.value)
-+  },
- })
- </script>
-```
+    +  setup() {
+    +    useMeta(() => qint.meta.value)
+    +  },
+     })
+     </script>
 
-Enable Quasar [meta](https://quasar.dev/quasar-plugins/meta#installation) plugin.
+    ```
+
+-   Enable Quasar [meta](https://quasar.dev/quasar-plugins/meta#installation) plugin.
 
 ### SSR mode
 
