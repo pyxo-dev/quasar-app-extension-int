@@ -20,7 +20,6 @@ export default defineComponent({
   name: 'Error404',
 
   setup() {
-    // eslint-disable-next-line @typescript-eslint/unbound-method
     const { t } = useI18n()
 
     return { t }

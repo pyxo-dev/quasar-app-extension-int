@@ -18,7 +18,6 @@ export default defineComponent({
 
   setup() {
     const i18n = useI18n()
-    // eslint-disable-next-line @typescript-eslint/unbound-method
     const { locale: langTag } = i18n
     const { langTags } = qint.conf
 
