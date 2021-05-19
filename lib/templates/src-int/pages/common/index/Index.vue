@@ -49,7 +49,7 @@ export default defineComponent({
 async function updatePostLc(langTag) {
   try {
     postLc.value = (
-      await import(`../../../content/${langTag}/index.ts`)
+      await import(`../../../content/${langTag}/index.js`)
     ).default
   } catch (err) {
     console.error(err)
