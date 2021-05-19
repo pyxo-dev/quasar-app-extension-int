@@ -7,8 +7,9 @@ import { augmentGlobals } from 'src/int/helpers'
 
 export let qint: Qint
 
-export default boot(({ app, router, ssrContext }) => {
-  qint = createQint(getQintConf(), ssrContext)
+// Uncomment `ssrContext` if using ssr mode.
+export default boot(({ app, router /*, ssrContext */ }) => {
+  qint = createQint(getQintConf() /*, ssrContext */)
 
   app.use(qint.i18nPlugin)
 

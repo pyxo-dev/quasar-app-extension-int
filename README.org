@@ -8,14 +8,53 @@ quasar ext add @pyxo/int
 #+end_src
 
 The extension will add a directory =src/int/= that contains the configuration.
-It adds also a boot file =src/boot/int.(ts|js)=, that needs to be registered
-manually in =quasar.conf.js > boot=.
+It adds also a boot file =src/boot/int.(ts|js)=.
 
 The extension will also scaffold an example implementation in =src-int/=.
 
 ** Prompts
-You will be prompted if your app has typescript support, if you answer yes, *.ts
-files will be added instead of *.js.
+You will be prompted if your app has typescript support, if you answer yes, =*.ts=
+files will be added instead of =*.js=.
+
+** Setup
+To use the scaffolded example, register the boot file  in =quasar.conf.js >
+boot= and make the following changes:
+
+=src/router/index.(ts|js)=
+#+begin_src diff
+   const Router = createRouter({
+     scrollBehavior: () => ({ left: 0, top: 0 }),
+-    routes,
++    routes: [],
+     ...
+#+end_src
+
+Change =vueRouterMode= in =quasar.conf.js > build= to =history= mode.
+
+*** Hreflang link tags
+To use the hreflang link tags, make the following changes:
+
+=src/App.vue=
+#+begin_src diff
+ <script lang="ts">
++import { useMeta } from 'quasar'
++import { qint } from 'src/boot/int'
+ import { defineComponent } from 'vue'
+
+ export default defineComponent({
+   name: 'App',
+
++  setup() {
++    useMeta(() => qint.meta.value)
++  },
+ })
+ </script>
+#+end_src
+
+Enable Quasar [[https://quasar.dev/quasar-plugins/meta#installation][meta]] plugin.
+
+*** SSR mode
+Uncomment =ssrContext= in =src/boot/int.(ts|js)= as indicated.
 
 * Uninstall
 #+begin_src sh
@@ -34,6 +73,7 @@ boot file =src/boot/int.(ts|js)=.
 - Can make use of the user's client language preferences (e.g. browser
   settings).
 - Support for =hreflang= link tags.
+- Lazy loading of Quasar language packs and =vue-i18n= locale messages.
 - Language tags, Qint uses the term "language tag" to denote a language or a
   locale, and recommends the use of [[https://www.w3.org/International/articles/language-tags][BCP 47]] language tags.
 
