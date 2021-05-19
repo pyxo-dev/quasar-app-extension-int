@@ -32,7 +32,7 @@
             flat
             color="grey-8"
             type="a"
-            href="https://github.com/ejez/qint"
+            href="https://github.com/pyxo-dev/qint"
             target="_blank"
           >
             <q-icon :name="laCodeSolid" color="grey-8" size="28px" />

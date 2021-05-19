@@ -1,6 +1,6 @@
 {
   "name": "@pyxo/quasar-app-extension-int",
-  "version": "1.0.0-beta.3",
+  "version": "1.0.0-beta.4",
   "description": "A Quasar app extension to add internationalization support.",
   "keywords": [
     "Quasar",
