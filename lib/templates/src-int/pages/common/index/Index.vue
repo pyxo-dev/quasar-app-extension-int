@@ -36,8 +36,8 @@ export default defineComponent({
     // When the language tag changes, update the post localization.
     watch(
       langTag,
-      (langTag) => {
-        updatePostLc(langTag)
+      async (langTag) => {
+        await updatePostLc(langTag)
       },
       { immediate: true }
     )

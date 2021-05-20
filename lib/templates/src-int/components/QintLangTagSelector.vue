@@ -44,7 +44,7 @@ export default defineComponent({
         return url.href.replace(url.origin, '')
       } else {
         // Case when no hreflang link tag exists for the language tag.
-        return `/${langTag}`
+        return `/${langTag.value}`
       }
     })
 

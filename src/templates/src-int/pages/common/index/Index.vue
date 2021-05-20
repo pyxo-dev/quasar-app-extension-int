@@ -42,8 +42,8 @@ export default defineComponent({
     // When the language tag changes, update the post localization.
     watch(
       langTag,
-      (langTag) => {
-        updatePostLc(langTag)
+      async (langTag) => {
+        await updatePostLc(langTag)
       },
       { immediate: true }
     )
@@ -54,9 +54,9 @@ export default defineComponent({
 
 async function updatePostLc(langTag: string) {
   try {
-    postLc.value = (
+    postLc.value = (<{ default: IndexPostLc }>(
       await import(`../../../content/${langTag}/index.ts`)
-    ).default
+    )).default
   } catch (err) {
     console.error(err)
   }

@@ -10,6 +10,7 @@
 
 <script lang="ts">
 import { qint } from 'src/boot/int'
+import type { Ref } from 'vue'
 import { defineComponent, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute } from 'vue-router'
@@ -24,7 +25,7 @@ export default defineComponent({
     const route = useRoute()
 
     // Will hold the blog post localization.
-    const postLc = ref()
+    const postLc: Ref<Record<string, unknown> | undefined> = ref()
 
     // When the language tag or the slug changes Get and update the post
     // localization. Also update the hreflang link tags.
